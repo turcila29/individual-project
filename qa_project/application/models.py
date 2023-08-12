@@ -8,7 +8,7 @@ from application import db
 #     email = db.Column(db.String(30), unique = True, nullable = False)
 #     Address = db.Column(db.String(60), nullable = False)
 #     phoneNumber = db.Column(db.Integer, nullable = False)
-#     # postalCode = db.Column
+#     postalCode = db.Column(db.String(7), nullable= False)
 
 # class Products(db.Model):
 #     id = db.Column(db.Integer, primary_key = True)
