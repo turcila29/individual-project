@@ -10,6 +10,10 @@ from application import db
 #     phoneNumber = db.Column(db.Integer, nullable = False)
 #     postalCode = db.Column(db.String(7), nullable= False)
 
+
+
+
+
 # class Products(db.Model):
 #     id = db.Column(db.Integer, primary_key = True)
 #     Name = db.Column(db.String(60), unique = True)

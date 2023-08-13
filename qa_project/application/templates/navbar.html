@@ -4,8 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+
+        #navbar {
+        overflow: hidden;
+        background-color: #333;
+        }
+
+        #navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+        }
+
+        .content {
+        padding: 16px;
+        }
+
+        .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        }
+
+        .sticky + .content {
+        padding-top: 60px;
+        }
+
+    </style>
 </head>
 <body>
+
+
+    <div id="navbar">
+      <a href="{{ url_for('layout.html') }}">Home</a>
+        <a href="products.html">Browse</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="category.html">Categories</a>
+        <a href="cart.html">Basket</a>
+        <a href="about_us.html">About Us</a>
+        <a href="shipping.html">Shipping Details</a>
+        <a href="payment.html">Order history</a>
+    </div>
+
+
+      <script>
+        window.onscroll = function() {myFunction()};
+        
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+        
+        function myFunction() {
+          if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+          } else {
+            navbar.classList.remove("sticky");
+          }
+        }
+        </script>
     
 </body>
 </html>
