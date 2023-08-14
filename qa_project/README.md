@@ -29,3 +29,6 @@ CREATE TABLE stock(
     description VARCHAR(500) NOT NULL,
     category VARCHAR(30) NOT NULL,
     price INT NOT NULL);
+
+
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URI")

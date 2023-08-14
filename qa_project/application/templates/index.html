@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- <link rel="stylesheet" href="static/style.css"> -->
+
+    <style>
+        h2{
+            text-align: center;
+            color: black;
+
+        }
+
+        p{
+            text-align: center;
+            color: black;
+        }
+
+        .link{
+            text-align: center;
+        }
+
+        a:hover{
+            color: red;
+        }
+
+
+        img { 
+
+            width: 20%;
+            height: 20%;
+            margin-left: 12cm;
+        }
+
+        .fragrance{
+            text-align: center;
+        }
+
+
+
+    </style>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fragrance World</title>
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+
+
+    <div class="content">
+        <div class="segment"><br><br>
+            <h2 class="header"> Welcome to Fragrance World</h2>
+            <div class="segment-content">
+                <p>Hello, my name is Andrei, a certified fragrance expert trained by The Fragrance Foundation, and in my years of experience I have tried my best to unravell the mysteries of perfumery.</p> 
+                <p>I have decided to create a place where I can advice and provide all the hidden gems and best fragrances that I have found throughout my years of searching.</p>
+                <div class="link">
+                <a href="https://www.fragrancefoundation.org.uk"> Fragrance Foundation</a>
+                </div>
+            </div>
+        </div>
+
+
+
+    <div class="content">
+        <div class="segment">
+            <h2 class="header"> Some personal favourites</h2>
+            <div class="segment-content">
+               <p>In this section i just want to present some some of my personal favourites based on the quality for price and development process.</p> <br>
+               <div class="container">
+                <h3 class="fragrance"> Chanel Platinum Egoiste EDT</h3>
+               <img src="static/platinum_egoiste.jpg">
+               <p class="fragrance">Egoiste Platinum by Chanel is a Woody Floral Musk fragrance for men. Egoiste Platinum was launched in 1993</p><br>
+               <p class="fragrance">Amazing choice for a summer scent and a daily use but lacks the strenght to resist during cold weathers.</p>
+              </div>
+
+                <div class="container">
+                    <h3 class="fragrance">Acqua Di Gio Giorgio Armani</h3>
+                    <img src="static/acqua_di_gio.jpeg">
+                    <p class="fragrance">Acqua di Gio by Giorgio Armani is a Aromatic Aquatic fragrance for men. Acqua di Gio was launched in 1996.</p> <br>
+                    <p class="fragrance">Another amazing choice for a summer scent but compared to Platinum Egoiste, this one has a better persistance making it a good fragrance to wear for events or as a evening wear.</p>
+                </div>
+
+                <div class="container">
+                    <h3 class="fragrance">L'interdit givechy</h3>
+                    <img src="static/l'interdit.jpeg">
+                    <p class="fragrance">L'Interdit Eau de Parfum by Givenchy is a Amber Floral fragrance for women. L'Interdit Eau de Parfum was launched in 2018.</p> <br>
+                    <p class="fragrance">For a women fragrance, honestly I do not think it can get better than this. 
+                    The sublte balance between the fruity notes(Pear and Bergamot) and floral notes (Tuberose and Jasmines) is absolutely beautiful,
+                     and on top of that the fragrance also has a pretty wild side of Patchouli, Vanilla and Ambroxan making it a great choice for any occasions.</p>
+                </div>
+
+
+
+            </div>
+    </div>
+
+
+
+
+    <div class="content">
+        <div class="segment">
+            <h2 class="header"> Want more options?</h2>
+            <div class="segment-content">
+                <p>Don't worry we have loads of different options for anyone to choose from and as I mentioned before
+                     everything presented here was chosen for its quality and persistance so only the best of the best made it here.</p>
+            </div>
+
+            <div class="link">
+                <a href="{{ url_for('products') }}">See all the option here.</a>
+            </div>
+        </div>
+        
+    
+
+
+
+
+
+
+
+    </div>
+    
+</body>
+</html>
