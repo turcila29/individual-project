@@ -1,12 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333366;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        h3 {
+            color: #660066;
+        }
+</style>
+
+
+  </head>
+  <body>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {% include 'navbar.html' %}
-    
-</body>
+    <title>Shopping Cart</title>
+    </head>
+    <body>
+    <h1>Your Cart</h1>
+    <table>
+    <tr>
+    <th>Order Detail ID</th>
+    <th>Order ID</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    </tr>
+            {% for order in all_orders %}
+    <tr>
+    <td>{{ order.order_detail_id }}</td>
+    <td>{{ order.order_id }}</td>
+    <td>{{ order.quantity }}</td>
+    <td>{{ order.price }}</td>
+    </tr>
+            {% endfor %}
+    </table>
+    <h3>Total Amount: {{ total_amount }}</h3>
+    </body>
+    </html>
+        
+
+  </body>
 </html>
