@@ -15,14 +15,6 @@ class Customer(db.Model):
 
  
 
-# class Order(db.Model):
-
-#     order_id = db.Column(db.Integer, primary_key=True)
-#     customer_id = db.Column(db.Integer, db.ForeignKey('customer.customer_id'), nullable=False)
-#     order_date = db.Column(db.DateTime)
-#     order_status = db.Column(db.Boolean) 
-#     order_details = db.relationship('Order_detail', backref='order')
-
 
 class Order(db.Model):
     order_id = db.Column(db.Integer, primary_key=True)
