@@ -34,3 +34,5 @@ with app.app_context():
     db.session.add(testuser)
     db.session.commit()
 
+    
+
