@@ -32,3 +32,29 @@ CREATE TABLE stock(
 
 
     app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URI")
+
+
+
+    # @app.route('/cart')
+# def cart():
+#     all_orders = Order_detail.query.all()
+#     order_string = 0
+#     for order in all_orders:
+#         order_string += order.quantity * order.price
+#     return "total: " + str(round(order_string, 2))
+
+
+
+
+# @app.route('/cart')
+# def cart():
+#     all_orders = Order_detail.query.all()
+#     total_amount = 0
+#     for order in all_orders:
+#         total_amount += order.price
+#     return render_template('prodcut2.html', all_orders=all_orders, total_amount=total_amount)
+
+{{ form.hidden_tag() }}
+
+{% if product.id == order.product_id %} 
+{% endif %}

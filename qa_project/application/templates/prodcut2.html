@@ -32,6 +32,8 @@
   </head>
   <body>
 
+    {% include 'navbar.html' %}
+
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -40,23 +42,72 @@
     </head>
     <body>
     <h1>Your Cart</h1>
+
     <table>
     <tr>
     <th>Order Detail ID</th>
-    <th>Order ID</th>
+    <th>Name</th>
     <th>Quantity</th>
     <th>Price</th>
     </tr>
-            {% for order in all_orders %}
-    <tr>
+     <tr>
+           
+           {% for order in all_orders %}
     <td>{{ order.order_detail_id }}</td>
-    <td>{{ order.order_id }}</td>
+    <td>
+            {% for product in all_product %}
+            {% if product.product_id == order.product_id %} 
+                {{product.name}}
+            {% endif %}
+            {% endfor %}
+    </td>
     <td>{{ order.quantity }}</td>
     <td>{{ order.price }}</td>
     </tr>
+
+            
+            
             {% endfor %}
+
+                    {% for order in all_orders %}
+            <tr>
+            <!-- ... other columns for the item details ... -->
+
+            
+
+                <!-- Column for updating the quantity -->
+            <td>
+            <form action="{{ url_for('update_quantity', order_detail_id=order.order_detail_id) }}" method="post">
+            <input type="number" name="new_quantity" value="{{ order.quantity }}" min="1">
+            <input type="submit" value="Update">
+            </form>
+            </td>
+
+            
+
+                <!-- Column for deleting the item -->
+            <td>
+            <form action="{{ url_for('delete_item', order_detail_id=order.order_detail_id) }}" method="post"> 
+            <input type="submit" value="Delete">
+            </form>
+            </td>
+            </tr>
+            {% endfor %}
+
+            
+
+
+
+
     </table>
-    <h3>Total Amount: {{ total_amount }}</h3>
+
+
+    <h3>Total Amount: £ {{ total_amount }}</h3> <br>
+    <div>
+    <a href="{{ url_for('payment') }}">checkout</a>
+    </div>
+
+
     </body>
     </html>
         

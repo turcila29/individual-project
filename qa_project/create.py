@@ -7,18 +7,30 @@ with app.app_context():
     db.drop_all()
     db.create_all()
 
-    testuser = Order_detail(order_id=1, product_id=1, quantity=10, price=12.50)
+    banana = Product(name="banana", description="its a nice bananana", price=10, stock_quantity=7)
+    db.session.add(banana)
+    db.session.commit()
+
+    apple = Product(name="apple", description="its a nice apple", price=30, stock_quantity=100)
+    db.session.add(apple)
+    db.session.commit()
+
+    pear = Product(name="pear", description="its a nice pear", price=50, stock_quantity=100)
+    db.session.add(pear)
+    db.session.commit()
+
+    testuser = Order_detail(order_id=1, product=banana, quantity=10)
+    testuser.price = banana.price 
     db.session.add(testuser)
     db.session.commit()
 
-    testuser = Order_detail(order_id=2, product_id=2, quantity=5, price=20.45)
+    testapple = Order_detail(order_id=2, product=apple, quantity=5)
+    testapple.price = apple.price 
+    db.session.add(testapple)
+    db.session.commit()
+
+    testuser = Order_detail(order_id=3, product=pear, quantity=6)
+    testuser.price = pear.price
     db.session.add(testuser)
     db.session.commit()
 
-    testuser = Order_detail(order_id=3, product_id=3, quantity=6, price=60.65)
-    db.session.add(testuser)
-    db.session.commit()
-
-    testuser = Order_detail(order_id=4, product_id=4, quantity=3, price=90.23)
-    db.session.add(testuser)
-    db.session.commit()

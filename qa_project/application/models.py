@@ -29,7 +29,7 @@ class Product(db.Model):
 
     product_id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(30), nullable=False)
-    description = db.Column(db.String(30), nullable=False)
+    description = db.Column(db.String(500), nullable=False)
     price = db.Column(db.Float)
     stock_quantity = db.Column(db.Integer)
     order_details = db.relationship('Order_detail', backref='product')
@@ -41,7 +41,7 @@ class Order_detail(db.Model):
     order_detail_id = db.Column(db.Integer, primary_key=True)
     order_id = db.Column(db.Integer, db.ForeignKey('order.order_id'), nullable=False)
     product_id = db.Column(db.Integer, db.ForeignKey('product.product_id'), nullable=False)
-    quantity = db.Column(db.Integer)
-    price = db.Column(db.Float)
+    quantity = db.Column(db.Integer, nullable = False)
+    price = db.Column(db.Float, nullable=False)
 
  
