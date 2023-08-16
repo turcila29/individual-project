@@ -7,30 +7,30 @@ with app.app_context():
     db.drop_all()
     db.create_all()
 
-    banana = Product(name="banana", description="its a nice bananana", price=10, stock_quantity=7)
-    db.session.add(banana)
+    chanel = Product(name="Platinum Egoiste Chanel", description="A thrilling scent for summer", price=100, stock_quantity=100)
+    db.session.add(chanel)
     db.session.commit()
 
-    apple = Product(name="apple", description="its a nice apple", price=30, stock_quantity=100)
-    db.session.add(apple)
+    armani = Product(name="Acqua di Gio Armani", description="Best man fragrance", price=120, stock_quantity=100)
+    db.session.add(armani)
     db.session.commit()
 
-    pear = Product(name="pear", description="its a nice pear", price=50, stock_quantity=100)
-    db.session.add(pear)
+    givenchy = Product(name="L'interdit Givenchy", description="A fine gourmont scent", price=150, stock_quantity=100)
+    db.session.add(givenchy)
     db.session.commit()
 
-    testuser = Order_detail(order_id=1, product=banana, quantity=10)
-    testuser.price = banana.price 
+    testuser = Order_detail(order_id=1, product=chanel, quantity=10)
+    testuser.price = chanel.price 
     db.session.add(testuser)
     db.session.commit()
 
-    testapple = Order_detail(order_id=2, product=apple, quantity=5)
-    testapple.price = apple.price 
+    testapple = Order_detail(order_id=2, product=armani, quantity=5)
+    testapple.price = armani.price 
     db.session.add(testapple)
     db.session.commit()
 
-    testuser = Order_detail(order_id=3, product=pear, quantity=6)
-    testuser.price = pear.price
+    testuser = Order_detail(order_id=3, product=givenchy, quantity=6)
+    testuser.price = givenchy.price
     db.session.add(testuser)
     db.session.commit()
 

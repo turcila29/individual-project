@@ -27,7 +27,7 @@ def cart():
     all_product = Product.query.all()
     all_orders = Order_detail.query.all()
     total_amount = sum([order.quantity * order.price for order in all_orders])
-    return render_template('prodcut2.html', all_orders=all_orders, total_amount=total_amount, all_product=all_product)
+    return render_template('cart.html', all_orders=all_orders, total_amount=total_amount, all_product=all_product)
 
  
 
@@ -134,25 +134,24 @@ def add_to_cart():
  
 
     # Check if there's an active cart for the current session
-    cart_order = Order.query.filter_by(is_cart=True, status=True).first()  # Find active cart
+    cart_order = Order.query.filter_by(cart=True, status=True).first()  # Find active cart
     if not cart_order:
         # If no cart, create one
-        cart_order = Order(status=True, is_cart=True, order_date=datetime.now())
+        cart_order = Order(status=True, cart=True, order_date=datetime.now())
         db.session.add(cart_order)
         db.session.commit()
 
  
 
     if product:
-        # Create a new Order_detail instance
         order_detail = Order_detail(
             order_id=cart_order.order_id,
             product_id=product.product_id,
-            quantity=1,  # You can modify this to take quantity as an input
+            quantity=1, 
             price=product.price
         )
 
-        # Add and commit the new order_detail to the database
+      
         db.session.add(order_detail)
         db.session.commit()
     return redirect(url_for('products'))

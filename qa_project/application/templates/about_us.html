@@ -1,12 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+        <style>
+              div{
+                font-family: 'Times New Roman', Times, serif;
+                color: #333;
+            }
+        </style>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="\static\style.css"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="\static\style.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    {% include 'navbar.html' %}
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+            <div class="container">
+                <a class="navbar-logo" href="#"><img src="\static\fragrance-world-logo.png"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('products') }}">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('categories') }}">Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('cart') }}">Cart</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="about">
+            <h3>Mission</h3>
+            <p> We keep our readers in the know about the latest perfume releases, renowned fragrances, and hidden aromatic treasures. 
+                Embark on a sensory journey through time and space, guided by the captivating scents that shape our experiences. 
+                Explore their fascinating history, uncover exotic locales, and marvel at the wonders of nature with fellow perfume aficionados.
+                As an independent publication based in the United Kingdom, Fragrance World is accessible in multiple languages, welcoming fragrance enthusiasts worldwide. 
+                Contribute your insights, expand your knowledge through our articles, and engage in lively discussions on our forums.
+                 We foster a respectful and inclusive environment where everyone can share their passion for fragrances.</p> <br>
+
+            <h3>History</h3>
+            <p>Hello, fragrance aficionados!
+                Welcome to Fragrance World, where the world's most enchanting scents come to life.
+                My journey with fragrances began in the bustling streets of London, the perfume capital of the world. A serendipitous encounter with a perfumer during my travels ignited a passion within me that transcended beyond just a fleeting appreciation. I realized that fragrances weren't just about the scent; they were stories, memories, and emotions bottled up.
+                Every fragrance has its own story and character, and I wanted to curate a platform that not only offers high-quality perfumes but also educates and takes you on a journey through each unique scent's origin, ingredients, and lore.
+                Fragrance World isnt just an online store; it is a carefully curated experience. Whether you are looking for timeless classics, niche wonders, or avant-garde compositions, we have got something that will not only delight your olfactory senses but also resonate with your soul.
+                Being eco-conscious and ethical in our approach, we also ensure that every brand and product we feature aligns with our values. The bottles you see on our virtual shelves are sourced responsibly, ensuring that you can enjoy their beauty with a clear conscience.
+                Join me in this aromatic journey, and discover scents that define you, move you, and tell your story. Because, just like memories, a good fragrance lingers long after the moment has passed. 
+            </p><br>
+                <p> 
+                 Warm wishes, <br>
+                Andrei
+                </p>
+        </div>
+    
     
 </body>
 </html>

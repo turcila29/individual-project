@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="\zoro\style.css"> 
+    <link rel="stylesheet" href="\static\style.css"> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="\static\style.css" rel="stylesheet">
     <title>Fragrance World</title>
 </head>
 <body>
@@ -13,29 +14,29 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
         <div class="container">
-            <a class="navbar-logo" href="#"><img src="fragrance-world-logo.png"></a>
+            <a class="navbar-logo" href="#"><img src="\static\fragrance-world-logo.png"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="{{ url_for('home') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="{{ url_for('about') }}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
+                        <a class="nav-link" href="{{ url_for('products') }}">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Categories</a>
+                        <a class="nav-link" href="{{ url_for('categories') }}">Categories</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cart</a>
+                        <a class="nav-link" href="{{ url_for('cart') }}">Cart</a>
                     </li>
                 </ul>
             </div>
@@ -62,7 +63,7 @@
                <p>Here are some of my personal favourites based on the quality for price and development process.</p> <br>
                <div class="container">
                 <h3 class="fragrance"> Chanel Platinum Egoiste EDT</h3>
-               <img src="\zoro\platinum_egoiste.jpg">
+               <img src="\static\platinum_egoiste.jpg">
                <br>
                <p class="fragrance-desc">Egoiste Platinum by Chanel is a Woody Floral Musk fragrance for men. Egoiste Platinum was launched in 1993.</p><br>
                <p class="fragrance-desc">Amazing choice for a summer scent and a daily use but lacks the strenght to resist during cold weathers.</p>
@@ -70,14 +71,14 @@
 
                 <div class="container">
                     <h3 class="fragrance">Acqua Di Gio Giorgio Armani</h3>
-                    <img src="\zoro\acqua_di_gio.jpeg">
+                    <img src="\static\acqua_di_gio.jpeg">
                     <p class="fragrance-desc">Acqua di Gio by Giorgio Armani is a Aromatic Aquatic fragrance for men. Acqua di Gio was launched in 1996.</p> <br>
                     <p class="fragrance-desc">Another amazing choice for a summer scent but compared to Platinum Egoiste, this one has a better persistance making it a good fragrance to wear for events or as a evening wear.</p>
                 </div>
 
                 <div class="container">
                     <h3 class="fragrance">L'interdit Givechy</h3>
-                    <img src="\zoro\l'interdit.jpeg">
+                    <img src="\static\l'interdit.jpeg">
                     <p class="fragrance-desc">L'Interdit Eau de Parfum by Givenchy is a Amber Floral fragrance for women. L'Interdit Eau de Parfum was launched in 2018.</p> <br>
                     <p class="fragrance-desc">For a women fragrance, honestly I do not think it can get better than this. 
                     The sublte balance between the fruity notes(Pear and Bergamot) and floral notes (Tuberose and Jasmines) is absolutely beautiful,
@@ -109,7 +110,7 @@
     <div class="container-fluid padding">
     <div class="row text-center">
         <div class="col-md-4">
-            <img id="footer-logo" src="fragrance-world-logo.png">
+            <img id="footer-logo" src="\static\fragrance-world-logo.png">
             <!-- <hr class="light"> -->
             <br>
             <p>536-582-9537</p>

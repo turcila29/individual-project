@@ -1,13 +1,150 @@
 <html>
   <head>
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="\static\style.css"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="\static\style.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333366;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+</style>
+
+
   </head>
   <body>
-    {% include 'navbar.html' %}
 
-    <py-script>
 
-    </py-script>
+       <!-- Navigation -->
+       <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-logo" href="#"><img src="\static\fragrance-world-logo.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('products') }}">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('categories') }}">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('cart') }}">Cart</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    </head>
+    <body>
+    <h1>Your Cart</h1>
+
+    <table>
+    <tr>
+    <th>Order Detail ID</th>
+    <th>Name</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    </tr>
+     <tr>
+           
+           {% for order in all_orders %}
+    <td>{{ order.order_detail_id }}</td>
+    <td>
+            {% for product in all_product %}
+            {% if product.product_id == order.product_id %} 
+                {{product.name}}
+            {% endif %}
+            {% endfor %}
+    </td>
+    <td>{{ order.quantity }}</td>
+    <td>{{ order.price }}</td>
+    </tr>
+
+            
+            
+            {% endfor %}
+
+                    {% for order in all_orders %}
+            <tr>
+            <!-- ... other columns for the item details ... -->
+
+            
+
+                <!-- Column for updating the quantity -->
+            <td>
+            <form action="{{ url_for('update_quantity', order_detail_id=order.order_detail_id) }}" method="post">
+            <input type="number" name="new_quantity" value="{{ order.quantity }}" min="1">
+            <input type="submit" value="Update">
+            </form>
+            </td>
+
+            
+
+                <!-- Column for deleting the item -->
+            <td>
+            <form action="{{ url_for('delete_item', order_detail_id=order.order_detail_id) }}" method="post"> 
+            <input type="submit" value="Delete">
+            </form>
+            </td>
+            </tr>
+            {% endfor %}
+
+            
+
+
+
+
+    </table>
+
+
+    <h3>Total Amount: £ {{ total_amount }}</h3> <br>
+    <div>
+    <a href="{{ url_for('shipping') }}">checkout</a>
+    </div>
+
+
+    </body>
+    </html>
+        
+
   </body>
 </html>
