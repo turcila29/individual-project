@@ -37,8 +37,21 @@ I thought that the best way of approaching this project was through Agile Method
 
 ### Epics, User Stories, Tasks and Acceptance Criteria
 
-I created 9 user stories that covered the must ares of my project, including the home page, cart page, payment, shipping, and so on. Inside each of my user stories, I stored all of the related tasks to keep it well-structured and easy to understand
-![user story](https://github.com/fkia413/ProjectRepo/assets/131884777/0c4e92d2-aec5-4f6d-a145-32141313e1e6)
+I created 9 user stories that covered the must ares of my project, including the home page, cart page, payment, shipping, and so on. Inside each of my user stories, I stored all of the related tasks to keep it well-structured and easy to understand. This is the first draft of the Kanban:
+<img width="1440" alt="first kanban part1" src="https://github.com/turcila29/individual-project/assets/62671182/f6405200-d142-4e66-aa4a-4d7726a1bf2a">
+
+<img width="1440" alt="first kanban part2" src="https://github.com/turcila29/individual-project/assets/62671182/e1e5ee47-b8b2-4459-b236-b2bc2d2f5e6a">
+
+And as I progressed through the project I was also moving around my tasks so I know where I stand and how much I got left to do.
+<img width="1440" alt="Screenshot 2023-08-15 at 13 52 35" src="https://github.com/turcila29/individual-project/assets/62671182/de700be4-7fc0-409e-877c-1adff9890577">
+
+And eventually, it was all done:
+<img width="1440" alt="Screenshot 2023-08-16 at 17 06 14" src="https://github.com/turcila29/individual-project/assets/62671182/2942ddab-5749-4fb5-be2e-4cfde28174b9">
+
+
+
+
+
 
 I also included some risks which I put in my risk assessment in the next section.
 
