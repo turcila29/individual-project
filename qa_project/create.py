@@ -19,6 +19,10 @@ with app.app_context():
     db.session.add(givenchy)
     db.session.commit()
 
+    moschino = Product(name="Toyboy Moschino", description="Best spicy fragrance", price=112, stock_quantity=100)
+    db.session.add(moschino)
+    db.session.commit()
+
     testuser = Order_detail(order_id=1, product=chanel, quantity=10)
     testuser.price = chanel.price 
     db.session.add(testuser)
@@ -34,5 +38,9 @@ with app.app_context():
     db.session.add(testuser)
     db.session.commit()
 
+    testuser = Order_detail(order_id=4, product=moschino, quantity=10)
+    testuser.price = moschino.price
+    db.session.add(testuser)
+    db.session.commit()
     
 

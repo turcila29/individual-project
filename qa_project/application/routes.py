@@ -170,5 +170,17 @@ def about():
 def product1():
     return render_template('product1.html')
 
+@app.route("/product3")
+def product3():
+    return render_template('product3.html')
+
+@app.route("/product4")
+def product4():
+    return render_template('product4.html')
+
+@app.route("/product5")
+def product5():
+    return render_template('product5.html')
+
 
     
