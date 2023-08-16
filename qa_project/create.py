@@ -4,7 +4,7 @@ from application import routes
 
 
 with app.app_context():
-    db.drop_all()
+
     db.create_all()
 
     chanel = Product(name="Platinum Egoiste Chanel", description="A thrilling scent for summer", price=100, stock_quantity=100)

@@ -46,25 +46,35 @@
     </nav>
 
        
-        <div class='form'>
-            <form method='POST' action=''>
+    <div class="container">
+        <div class="form-container">
+            <h2>Payment Details</h2>
+            <form method="POST" action="">
                 {{ form.hidden_tag() }}
-                <br>
-                <br>
-                <br>
                 <p>Enter Payment Details Below</p>
-                {{ form.card_num.label }} {{ form.card_num }}
-                <br>
-                {{ form.cvc_num.label }} {{ form.cvc_num }}
-                <br>
-                <br>
-                <br>
-                {{ form.submit }}
-                <br>
-            {{ message }}
+                <div class="form-group">
+                    <label for="cardholder_name">{{ form.name.label }}</label>
+                    {{ form.name }}
+                </div>
+                <div class="form-group">
+                    <label for="card_num">{{ form.card_num.label }}</label>
+                    {{ form.card_num }}
+                </div>
+                <div class="form-group">
+                    <label for="expiry_date">{{ form.exp_date.label }}</label>
+                    {{ form.exp_date }}
+                </div>
+                <div class="form-group">
+                    <label for="cvc_num">{{ form.cvc_num.label }}</label>
+                    {{ form.cvc_num }}
+                </div>
+                <button type="submit">Make Payment</button>
+                <p class="message">{{ message }}</p>
             </form>
 
         </div>
+
+    </div>
 
     </body>
 

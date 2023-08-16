@@ -4,9 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="\static\style.css"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="\static\style.css" rel="stylesheet">
+
+
 </head>
 <body>
-    {% include 'navbar.html' %}
+            <!-- Navigation -->
+            <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+                <div class="container">
+                    <a class="navbar-logo" href="#"><img src="\static\fragrance-world-logo.png"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('products') }}">Products</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('categories') }}">Categories</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('cart') }}">Cart</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+    <div class="content">
+        <div class="segment"><br> <br>
+            <h2 class="header"> Acqua di Gio</h2>
+            <div class="segment-content">
+               <p>Acqua di Gio by Armani is a Woody Floral Musk fragrance for men. Egoiste Platinum was launched in 1993. 
+                The nose behind this fragrance is Jacques Polge. Top notes are Lavender, Rosemary, Neroli and Petitgrain; 
+                middle notes are Geranium, Clary Sage, Galbanum and Jasmine; base notes are Oakmoss, Vetiver, Cedar, Sandalwood and Amber.</p> <br>
+                <div class="container">
+                    <img src="static/acqua_di_gio.jpeg">
+                    <h3 class="fragrance"> Perfume pyramid</h3>
+                    <p class="fragrance">Top notes</p><br>
+                    <p class="fragrance">Lavander Rosemary Neroli Petitgrain</p><br>
+                    <p class="fragrance">Middle notes</p><br>
+                    <p class="fragrance">Geranium Sage Galbanum Jasmine</p><br>
+                    <p class="fragrance">Base notes</p><br>
+                    <p class="fragrance">Oakmoss Vetiver Cedar Sandalwood Amber</p><br>
+                    <p class="fragrance">Price</p>
+                    <p class="fragrance">100£/100ml</p>
+                </div>
+            </div>
+        </div>
+    </div>
     
 </body>
 </html>

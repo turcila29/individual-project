@@ -57,7 +57,13 @@ class PayForm(FlaskForm):
         Length(min=16, max=16)])
     cvc_num = StringField('Enter 3 digit CVC Number', validators=[
         DataRequired(),
-        Length(min=3, max=3)])    
+        Length(min=3, max=3)]) 
+    name = StringField('Enter cardholder name', validators=[
+        DataRequired(),
+        Length(min=3, max=100)])  
+    exp_date = StringField('Enter the expiery date', validators=[
+        DataRequired(),
+        Length(max=5)])     
     submit = SubmitField('Pay Now')
 
  
@@ -69,6 +75,8 @@ def payment():
     if request.method == 'POST':
             message = f'Thank you, Payment has been Accepted'
     return render_template('payment.html', form=form, message=message)
+
+
  
 class ShipForm(FlaskForm):
     first_name = StringField('First Name', validators=[
@@ -109,7 +117,7 @@ def shipping():
             email = form.email.data
             phone = form.phone_num.data
             address = form.address.data
-            # Create a new Customer instance
+
             customer = Customer(
                 first_name=first_name,
                 last_name=last_name,
@@ -117,7 +125,6 @@ def shipping():
                 phone=phone,
                 address=address
             )
-            # Add and commit the new customer to the database
             db.session.add(customer)
             db.session.commit()
             message = f'Thank you, {first_name} {last_name}. Address was saved'

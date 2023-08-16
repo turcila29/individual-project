@@ -47,28 +47,6 @@
         </div>
     </nav>
 
-        <div class='form'>
-            <form method='POST' action=''>
-                {{ form.hidden_tag() }}
-                {{ form.first_name.label }} {{ form.first_name }}
-                <br>
-                {{ form.last_name.label }} {{ form.last_name }}
-                <br>
-                <br>
-                {{ form.email.label }} {{ form.email }}
-                <br>
-                <br>
-                {{ form.phone_num.label }} {{ form.phone_num }}
-                <br>
-                <br>
-                {{ form.address.label }} {{ form.address }}
-                <br>
-                {{ form.submit }}
-                <br>
-            {{ message }}
-            <a href="{{ url_for('payment') }}">Continue for checkout</a>
-            </form>
-
 
             <table>
                 <tr>
@@ -95,7 +73,31 @@
                         
                         
                         {% endfor %}
-            </table>
+            </table><br><br>
+
+        <div class='form'>
+            <form method='POST' action=''>
+                {{ form.hidden_tag() }}
+                {{ form.first_name.label }} {{ form.first_name }}
+                <br>
+                {{ form.last_name.label }} {{ form.last_name }}
+                <br>
+                <br>
+                {{ form.email.label }} {{ form.email }}
+                <br>
+                <br>
+                {{ form.phone_num.label }} {{ form.phone_num }}
+                <br>
+                <br>
+                {{ form.address.label }} {{ form.address }}
+                <br>
+                {{ form.submit }}
+                <br>
+            {{ message }}
+            <a href="{{ url_for('payment') }}">Continue for checkout</a>
+            </form>
+
+
 
         </div>
 
