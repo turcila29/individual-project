@@ -97,6 +97,11 @@ class ShipForm(FlaskForm):
 def shipping():
     message = ""
     form = ShipForm()
+
+    all_product = Product.query.all()
+    all_orders = Order_detail.query.all()
+    total_amount = sum([order.quantity * order.price for order in all_orders])
+
     if request.method == 'POST':
         if form.validate_on_submit():
             first_name = form.first_name.data
@@ -116,7 +121,7 @@ def shipping():
             db.session.add(customer)
             db.session.commit()
             message = f'Thank you, {first_name} {last_name}. Address was saved'
-    return render_template('shipping.html', form=form, message=message)
+    return render_template('shipping.html', form=form, message=message, all_orders=all_orders, total_amount=total_amount, all_product=all_product)
 
 
 @app.route('/products', methods=['GET', 'POST'])

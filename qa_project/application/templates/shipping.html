@@ -69,6 +69,34 @@
             <a href="{{ url_for('payment') }}">Continue for checkout</a>
             </form>
 
+
+            <table>
+                <tr>
+                <th>Order Detail ID</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                </tr>
+                 <tr>
+                       
+                       {% for order in all_orders %}
+                <td>{{ order.order_detail_id }}</td>
+                <td>
+                        {% for product in all_product %}
+                        {% if product.product_id == order.product_id %} 
+                            {{product.name}}
+                        {% endif %}
+                        {% endfor %}
+                </td>
+                <td>{{ order.quantity }}</td>
+                <td>{{ order.price }}</td>
+                </tr>
+            
+                        
+                        
+                        {% endfor %}
+            </table>
+
         </div>
 
     </body>
