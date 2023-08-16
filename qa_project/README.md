@@ -101,7 +101,7 @@ The next steps for this project is to run tests until it gets a high coverage so
 
 W3schools, Stackoverflow.
 
-## 10.Ackouledgements
+## 10.Acknowledgements
 I wanna thank to Earl Gray for helping me out when we I stuck and panicking, my colleagues, and every coding website that I accessed throughout my panicking moments(there were loads).
 
 
