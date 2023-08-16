@@ -52,11 +52,63 @@ And eventually, it was all done:
 
 
 
-
-I also included some risks which I put in my risk assessment in the next section.
-
 ### Risk Assessment
 ![risk asss](https://github.com/fkia413/ProjectRepo/assets/131884777/6e9fa5fc-48d5-4ff7-b91e-bbb72fe65728)
 This displays some of the risks that I may have encountered during the project, including the steps to mitigate any negative impacts. Based on this risk assessment, I was able to make changed to my code to decrease the possibility of the risks happening.
+
+## 4. Using my feature-branch model
+
+ I mostly used my feature branch to work on some backend functions that were messing with the code and after it was done merged them together.
+<img width="1440" alt="Screenshot 2023-08-16 at 11 13 35" src="https://github.com/turcila29/individual-project/assets/62671182/8bcc183c-6e06-4cfa-ad45-593c4f9a5342">
+
+## 5. ERD Diagram 
+
+ Creating the database was my favourite thing from this whole project. It felt like sorting out a puzzle that was evolving more and more as I was putting it together. I ended up with 4 tables: customer, product, order and order_detail.
+<img width="886" alt="Screenshot 2023-08-16 at 17 19 35" src="https://github.com/turcila29/individual-project/assets/62671182/b874aa40-158c-4494-b7b0-84d4ac257325">
+
+ Customer was the table I used to store the shipping information in.
+Product was the the table I used to display the stock onto the product page
+Order was the tables used to add and display on the cart page which is linked with customer through a foreign key ( since one customer can have multiple orders)
+and order_Detail was the table used to display, add and delete things from the cart and it was linked with product_id and order_id through foreign keys.
+
+## 6. Jenkins
+
+ I have managed to connect my project to jenkins and actually run it from within Jenkins.
+
+<img width="1440" alt="jenkins 1" src="https://github.com/turcila29/individual-project/assets/62671182/9a85e253-abf1-46b9-9f54-34d771313df2">
+
+<img width="1440" alt="jenkins 2" src="https://github.com/turcila29/individual-project/assets/62671182/a9b53e0f-1ac7-4a29-b3cd-a2ebd1935949">
+
+<img width="1440" alt="jenkins 3" src="https://github.com/turcila29/individual-project/assets/62671182/f5465d51-bbf1-45e3-9b79-d515b8c0fa54">
+
+<img width="1440" alt="jenkins 4" src="https://github.com/turcila29/individual-project/assets/62671182/ccebd494-f7a1-4d2e-bfd9-b6d64999cfe4">
+
+ What I failed to do was testing since the bugs and errors I encountered were overwhelming but I managed to go through them but it cost me too much time.
+
+## 7. Future plans
+
+ The Fragrance World website is in a good state as of now but its still a long way from reaching its potential.
+The next steps for this project is to run tests until it gets a high coverage so I know it is fully functional and user friendly and after that would be implementing more features to it  such as: more products, a blog were i can write more detailed info about frgrances, a monthly recommandation pannel on the home page, and thats just from the top of my head.
+
+## 8. Licensing
+ For coding I used visual studio code.
+ For the databse I used sqlite
+ For the Kanban board I used Jira
+ For the ERD diagram I used draw.io (absolutely amazing!!!)
+ I also used Jenkins, but not too much unfortunately.
+
+## 9. Contributors
+
+W3schools, Stackoverflow.
+
+## 10.Ackouledgements
+I wanna thank to Earl Gray for helping me out when we I stuck and panicking, my colleagues, and every coding website that I accessed throughout my panicking moments(there were loads).
+
+
+
+
+
+
+
 
 
